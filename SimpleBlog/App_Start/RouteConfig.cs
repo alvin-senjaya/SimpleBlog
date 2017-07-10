@@ -23,9 +23,17 @@ namespace SimpleBlog
             //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             //);
 
-            routes.MapRoute("Login", "login", new { controller = "Auth", action = "Login" }, namespaces);
+            routes.MapRoute(
+                name: "Login",
+                url: "login",
+                defaults: new { controller = "Auth", action = "Login" },
+                namespaces: namespaces);
 
-            routes.MapRoute("Home", "", new { controller = "Posts", action = "Index" }, namespaces);
+            routes.MapRoute(
+                name: "Home",
+                url: "",
+                defaults: new { controller = "Posts", action = "Index" },
+                namespaces: namespaces);
         }
     }
 }
